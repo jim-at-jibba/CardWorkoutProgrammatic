@@ -13,13 +13,23 @@ class CardSelectionVC: UIViewController {
     let stopButton = CWButton(backgroundColor: .systemRed, title: "Stop")
     let resetButton = CWButton(backgroundColor: .systemGreen, title: "Reset")
     let rulesButton = CWButton(backgroundColor: .systemBlue, title: "Rules")
-    
+    var timer: Timer!
+    var cards: [UIImage] = Deck.allValues
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureUI()
+        startTimer()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+            // If you dont call this, you wont get all the functionality that apple has built for you
+            super.viewWillDisappear(animated)
+            timer.invalidate()
+        }
+
     
     // Like a table of contents
     func configureUI () {
@@ -44,8 +54,18 @@ class CardSelectionVC: UIViewController {
         ])
     }
     
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(showRandomImage), userInfo: nil, repeats: true)
+    }
+    
+    @objc func showRandomImage() {
+        cardImageView.image = cards.randomElement() ?? UIImage(named: "AS")
+    }
+
+    
     func configureStopButton() {
         view.addSubview(stopButton)
+        stopButton.addTarget(self, action: #selector(stopTimer), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             stopButton.widthAnchor.constraint(equalToConstant: 260),
@@ -56,9 +76,14 @@ class CardSelectionVC: UIViewController {
         ])
     }
     
+    @objc func stopTimer() {
+        timer.invalidate()
+    }
+    
    
     func configureResetButton() {
         view.addSubview(resetButton)
+        resetButton.addTarget(self, action: #selector(resetTimer), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             resetButton.widthAnchor.constraint(equalToConstant: 115),
@@ -66,6 +91,11 @@ class CardSelectionVC: UIViewController {
             resetButton.leadingAnchor.constraint(equalTo: stopButton.leadingAnchor),
             resetButton.topAnchor.constraint(equalTo: stopButton.bottomAnchor, constant: 20)
         ])
+    }
+    
+    @objc func resetTimer() {
+        timer.invalidate()
+        startTimer()
     }
     
     func configureRulesButton() {

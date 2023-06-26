@@ -14,6 +14,7 @@
 		9A79D5FC2A45F26D005E4251 /* CardSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79D5FB2A45F26D005E4251 /* CardSelectionVC.swift */; };
 		9A79D5FE2A45F392005E4251 /* CWButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79D5FD2A45F392005E4251 /* CWButton.swift */; };
 		9A79D6002A499D54005E4251 /* RulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79D5FF2A499D54005E4251 /* RulesVC.swift */; };
+		9A79D6022A49A30F005E4251 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A79D6012A49A30F005E4251 /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9A79D5FB2A45F26D005E4251 /* CardSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectionVC.swift; sourceTree = "<group>"; };
 		9A79D5FD2A45F392005E4251 /* CWButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CWButton.swift; sourceTree = "<group>"; };
 		9A79D5FF2A499D54005E4251 /* RulesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesVC.swift; sourceTree = "<group>"; };
+		9A79D6012A49A30F005E4251 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		9A79D5DB2A45ED47005E4251 = {
 			isa = PBXGroup;
 			children = (
+				9A79D6012A49A30F005E4251 /* Deck.swift */,
 				9A79D5E62A45ED47005E4251 /* CardWorkoutProgramatic */,
 				9A79D5E52A45ED47005E4251 /* Products */,
 			);
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A79D6022A49A30F005E4251 /* Deck.swift in Sources */,
 				9A79D5FC2A45F26D005E4251 /* CardSelectionVC.swift in Sources */,
 				9A79D6002A499D54005E4251 /* RulesVC.swift in Sources */,
 				9A79D5E82A45ED47005E4251 /* AppDelegate.swift in Sources */,
